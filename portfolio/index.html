@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ainun Nishat Prottoy — Frontend Developer</title>
+<meta name="description" content="Portfolio of Ainun Nishat Prottoy, Frontend Developer specializing in React, Next.js and the MERN stack." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Decorative background layers -->
+<div class="bg-layer" aria-hidden="true">
+  <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="grain"></div>
+</div>
+
+<!-- Page/section transition overlay (curtain wipe, à la multi-page transitions) -->
+<div class="transition-overlay" id="transitionOverlay" aria-hidden="true"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="#home" class="logo" aria-label="Ainun Nishat Prottoy — home">
+      <span class="logo__part">AI</span><span class="logo__accent">N<i class="logo__node"></i></span><span class="logo__part">UN</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#resume" class="nav-link">Resume</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-overlay" id="navOverlay"></div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__inner">
+      <div class="hero__text reveal-left">
+        <p class="hero__greeting">Hello, I'm</p>
+        <h1 class="hero__name">Ainun Nishat<br>Prottoy</h1>
+        <h2 class="hero__title">
+          <span id="typedText"></span><span class="cursor" aria-hidden="true">|</span>
+        </h2>
+        <p class="hero__intro">
+          A Computer Science graduate who builds fast, accessible web
+          applications with the MERN stack and Next.js — currently
+          exploring where thoughtful engineering meets applied AI.
+          <em class="placeholder-tag">Replace with your own intro</em>
+        </p>
+        <div class="hero__buttons">
+          <a href="#resume" class="btn btn--primary" data-ripple>
+            <span>Download CV</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v13m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost" data-ripple>
+            <span>Contact Me</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal-right">
+        <div class="orbit" aria-hidden="true"></div>
+        <div class="profile-frame floating">
+          <div class="profile-glow"></div>
+          <img src="assets/images/profile.png" alt="Portrait of Ainun Nishat Prottoy" class="profile-img" width="420" height="420" />
+        </div>
+        <div class="glass-chip chip-1 floating-slow">
+          <span class="chip-dot"></span> Open to work
+        </div>
+        <div class="glass-chip chip-2 floating-slow-rev">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          MERN &amp; Next.js
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">About</p>
+      <h2>Who I am</h2>
+    </div>
+
+    <div class="glass-card about-card reveal-up">
+      <div class="about-card__grid">
+        <div>
+          <h3>Personal Summary</h3>
+          <p class="body-text">
+            Motivated and detail-oriented Computer Science &amp; Engineering
+            graduate with strong proficiency in JavaScript, TypeScript, and
+            modern frontend frameworks including React.js and Next.js.
+            Passionate about building scalable, high-performance web
+            applications with clean, maintainable code.
+            <em class="placeholder-tag">I will replace this with my own introduction.</em>
+          </p>
+        </div>
+        <div>
+          <h3>Career Objective</h3>
+          <p class="body-text">
+            Eager to contribute to innovation-driven projects and grow within
+            a dynamic, globally-focused engineering team — with a long-term
+            interest in applying machine learning to real products.
+            <em class="placeholder-tag">Placeholder — customize freely.</em>
+          </p>
+        </div>
+        <div>
+          <h3>Interests</h3>
+          <p class="body-text">
+            Exploring open-source projects, contributing to tech
+            communities, competitive programming, reading tech blogs, and
+            playing indoor games.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Skills</p>
+      <h2>What I work with</h2>
+    </div>
+
+    <div class="skills-grid" id="skillsGrid">
+      <!-- Cards injected identically in HTML for no-JS fallback, animated via JS -->
+
+      <div class="glass-card skill-card reveal-up">
+        <div class="skill-card__head">
+          <span class="skill-icon" aria-hidden="true">&lt;/&gt;</span>
+          <h3>Programming</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span>JavaScript</span><div class="bar"><i style="--val:92%"></i></div></li>
+          <li><span>TypeScript</span><div class="bar"><i style="--val:85%"></i></div></li>
+          <li><span>Python</span><div class="bar"><i style="--val:75%"></i></div></li>
+          <li><span>C / C++</span><div class="bar"><i style="--val:70%"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="glass-card skill-card reveal-up">
+        <div class="skill-card__head">
+          <span class="skill-icon" aria-hidden="true">&#9673;</span>
+          <h3>Web Development</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span>React.js</span><div class="bar"><i style="--val:90%"></i></div></li>
+          <li><span>Next.js</span><div class="bar"><i style="--val:85%"></i></div></li>
+          <li><span>HTML5 / SCSS</span><div class="bar"><i style="--val:95%"></i></div></li>
+          <li><span>Tailwind CSS</span><div class="bar"><i style="--val:80%"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="glass-card skill-card reveal-up">
+        <div class="skill-card__head">
+          <span class="skill-icon" aria-hidden="true">&#10022;</span>
+          <h3>AI &amp; Machine Learning</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span>Applied ML foundations</span><div class="bar"><i style="--val:55%"></i></div></li>
+          <li><span>Prompt / LLM tooling</span><div class="bar"><i style="--val:65%"></i></div></li>
+          <li><span>Data handling (Python)</span><div class="bar"><i style="--val:60%"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="glass-card skill-card reveal-up">
+        <div class="skill-card__head">
+          <span class="skill-icon" aria-hidden="true">&#9881;</span>
+          <h3>Tools</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span>Git &amp; GitHub</span><div class="bar"><i style="--val:90%"></i></div></li>
+          <li><span>VS Code</span><div class="bar"><i style="--val:95%"></i></div></li>
+          <li><span>Docker (basics)</span><div class="bar"><i style="--val:50%"></i></div></li>
+          <li><span>Postman / Vercel</span><div class="bar"><i style="--val:85%"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="glass-card skill-card reveal-up">
+        <div class="skill-card__head">
+          <span class="skill-icon" aria-hidden="true">&#9724;</span>
+          <h3>Databases</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span>MongoDB</span><div class="bar"><i style="--val:88%"></i></div></li>
+          <li><span>MySQL</span><div class="bar"><i style="--val:75%"></i></div></li>
+          <li><span>PostgreSQL</span><div class="bar"><i style="--val:65%"></i></div></li>
+        </ul>
+      </div>
+
+      <div class="glass-card skill-card reveal-up">
+        <div class="skill-card__head">
+          <span class="skill-icon" aria-hidden="true">&#9737;</span>
+          <h3>Soft Skills</h3>
+        </div>
+        <ul class="skill-list">
+          <li><span>Team Collaboration</span><div class="bar"><i style="--val:90%"></i></div></li>
+          <li><span>Communication</span><div class="bar"><i style="--val:85%"></i></div></li>
+          <li><span>Agile / Scrum</span><div class="bar"><i style="--val:80%"></i></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected work</h2>
+    </div>
+
+    <div class="projects-grid">
+      <article class="glass-card project-card reveal-up">
+        <div class="project-card__image ph-image" aria-hidden="true">
+          <span>Project Image</span>
+        </div>
+        <div class="project-card__body">
+          <h3>E-Commerce Web Application</h3>
+          <p class="body-text">
+            Full-stack e-commerce platform with server-side rendering for
+            better performance and SEO, RESTful APIs, JWT authentication,
+            role-based access control, and optimized MongoDB data modeling.
+          </p>
+          <ul class="tech-tags">
+            <li>Next.js</li><li>Node.js</li><li>Express.js</li><li>MongoDB</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/ainunprottoy2004" class="btn btn--small btn--ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="btn btn--small btn--primary">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card project-card reveal-up">
+        <div class="project-card__image ph-image" aria-hidden="true">
+          <span>Project Image</span>
+        </div>
+        <div class="project-card__body">
+          <h3>Personal Portfolio &amp; Task Manager</h3>
+          <p class="body-text">
+            Responsive portfolio site and a task-management application
+            built with React hooks and local storage, deployed via Vercel
+            and GitHub Pages.
+          </p>
+          <ul class="tech-tags">
+            <li>React.js</li><li>TypeScript</li><li>Tailwind CSS</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="https://github.com/ainunprottoy2004" class="btn btn--small btn--ghost" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="btn btn--small btn--primary">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="glass-card project-card reveal-up">
+        <div class="project-card__image ph-image" aria-hidden="true">
+          <span>Project Image</span>
+        </div>
+        <div class="project-card__body">
+          <h3>Your Next Project</h3>
+          <p class="body-text placeholder-tag">
+            Placeholder card — replace with a future build, its stack, and
+            a short description of the problem it solves.
+          </p>
+          <ul class="tech-tags">
+            <li>Stack</li><li>Goes</li><li>Here</li>
+          </ul>
+          <div class="project-card__links">
+            <a href="#" class="btn btn--small btn--ghost">GitHub</a>
+            <a href="#" class="btn btn--small btn--primary">Live Demo</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section" id="experience">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Experience</p>
+      <h2>Where I've worked</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline__item reveal-up">
+        <div class="timeline__dot"></div>
+        <div class="glass-card timeline__card">
+          <p class="timeline__date">Jun 2026 — Present</p>
+          <h3>Junior Frontend Developer</h3>
+          <p class="timeline__org">Daraz Ltd. · Full-time</p>
+          <p class="body-text">
+            Building and maintaining production frontend features with
+            React.js and Next.js, integrating REST APIs, and collaborating
+            with design and backend teams to ship reliable, high-traffic
+            e-commerce experiences.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal-up">
+        <div class="timeline__dot"></div>
+        <div class="glass-card timeline__card">
+          <p class="timeline__date">Mar 2026 — Jun 2026</p>
+          <h3>Junior Developer Intern (Part-time)</h3>
+          <p class="timeline__org">CodeNest Technologies Ltd.</p>
+          <p class="body-text">
+            Assisted in developing and debugging a React-based SaaS
+            dashboard, integrating REST APIs and managing frontend data
+            flow. Built responsive UI components with React.js, HTML5, and
+            SCSS, and collaborated with backend teams on performance
+            optimization.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section" id="education">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Education</p>
+      <h2>Academic background</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline__item reveal-up">
+        <div class="timeline__dot"></div>
+        <div class="glass-card timeline__card">
+          <p class="timeline__date">2026</p>
+          <h3>BSc in Computer Science &amp; Engineering</h3>
+          <p class="timeline__org">American International University, Bangladesh</p>
+          <p class="body-text">CGPA 3.75 / 4.00</p>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal-up">
+        <div class="timeline__dot"></div>
+        <div class="glass-card timeline__card">
+          <p class="timeline__date">2022</p>
+          <h3>Higher Secondary Certificate</h3>
+          <p class="timeline__org">Birshreshtha Munshi Abdur Rouf Public College, Dhaka</p>
+          <p class="body-text">GPA 5.00 / 5.00</p>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal-up">
+        <div class="timeline__dot"></div>
+        <div class="glass-card timeline__card">
+          <p class="timeline__date">2020</p>
+          <h3>Secondary School Certificate</h3>
+          <p class="timeline__org">Government Laboratory High School, Dhaka</p>
+          <p class="body-text">GPA 5.00 / 5.00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESUME ============ -->
+  <section class="section" id="resume">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Resume</p>
+      <h2>My resume</h2>
+    </div>
+
+    <div class="glass-card resume-card reveal-up">
+      <div class="resume-card__preview ph-image" aria-hidden="true">
+        <span>Resume Preview</span>
+      </div>
+      <div class="resume-card__body">
+        <h3>Download the full CV</h3>
+        <p class="body-text placeholder-tag">
+          Replace this link with your actual resume file once it's ready.
+        </p>
+        <a href="#" class="btn btn--primary" data-ripple>
+          <span>Download Resume</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v13m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO INTRODUCTION ============ -->
+  <section class="section" id="video">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Introduction</p>
+      <h2>Video Introduction</h2>
+    </div>
+
+    <div class="glass-card video-card reveal-up">
+      <p class="body-text placeholder-tag" style="text-align:center; margin-bottom: 1.5rem;">
+        A short introduction video will go here — replace the placeholder
+        link below with your own YouTube embed.
+      </p>
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="Video Introduction placeholder"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="section" id="certifications">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Certifications</p>
+      <h2>Certifications</h2>
+    </div>
+
+    <div class="cert-grid">
+      <div class="glass-card cert-card reveal-up">
+        <div class="cert-card__image ph-image" aria-hidden="true"><span>Certificate</span></div>
+        <h3>Web Development Certificate</h3>
+        <p class="timeline__org">Programming Hero</p>
+        <p class="timeline__date">Placeholder Date</p>
+        <a href="#" class="btn btn--small btn--ghost">View</a>
+      </div>
+      <div class="glass-card cert-card reveal-up">
+        <div class="cert-card__image ph-image" aria-hidden="true"><span>Certificate</span></div>
+        <h3>Certificate Title</h3>
+        <p class="timeline__org">Issuing Organization</p>
+        <p class="timeline__date">Placeholder Date</p>
+        <a href="#" class="btn btn--small btn--ghost">View</a>
+      </div>
+      <div class="glass-card cert-card reveal-up">
+        <div class="cert-card__image ph-image" aria-hidden="true"><span>Certificate</span></div>
+        <h3>Certificate Title</h3>
+        <p class="timeline__org">Issuing Organization</p>
+        <p class="timeline__date">Placeholder Date</p>
+        <a href="#" class="btn btn--small btn--ghost">View</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section" id="contact">
+    <div class="section__head reveal-up">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build something</h2>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <h3>Get in touch</h3>
+        <p class="body-text">
+          Have a role, a project, or just want to talk shop? I'd love to
+          hear from you.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon" aria-hidden="true">&#9993;</span>
+            <a href="mailto:ainunprottoy2004@gmail.com">ainunprottoy2004@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">&#9742;</span>
+            <a href="tel:+8801316319025">+880 1316319025</a>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">&#9737;</span>
+            <span>Dhaka, Bangladesh</span>
+          </li>
+        </ul>
+
+        <a href="https://www.facebook.com/messages/t/100011419669272" target="_blank" rel="noopener" class="btn btn--ghost messenger-link" data-ripple>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.2 2 11.4c0 2.9 1.4 5.5 3.6 7.2V22l3.3-1.8c.9.2 1.8.4 2.8.4 5.5 0 10-4.2 10-9.4C21.7 6.2 17.5 2 12 2zm1 12.6l-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 5-2.7-5.5 5.8z"/></svg>
+          <span>Message me on Messenger</span>
+        </a>
+      </div>
+
+      <form class="glass-card contact-form reveal-right" id="contactForm" novalidate data-messenger-id="100011419669272">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form-row">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full" id="sendBtn" data-ripple>
+          <span class="btn-label">Send via Messenger</span>
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="glass-card footer__inner">
+    <a href="#home" class="logo logo--small">
+      <span class="logo__part">AI</span><span class="logo__accent">N<i class="logo__node"></i></span><span class="logo__part">UN</span>
+    </a>
+
+    <div class="footer__socials" aria-label="Social links">
+      <a href="https://github.com/ainunprottoy2004" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.2.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.6.1-.6 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10.4 10.4 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.6 7.9-5.9 7.9-11C23.5 5.6 18.4.5 12 .5z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/ainun-nishat-prottoy" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8.3 18.5H5.7V9.6h2.6v8.9zM7 8.4a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11.5 10.1h-2.6v-4.3c0-1-.02-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2v4.4h-2.6V9.6h2.5v1.2h.03c.35-.66 1.2-1.35 2.47-1.35 2.65 0 3.14 1.74 3.14 4.02v5.03z"/></svg>
+      </a>
+      <a href="mailto:ainunprottoy2004@gmail.com" aria-label="Email">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+      </a>
+    </div>
+
+    <p class="footer__copy">&copy; <span id="year"></span> Ainun Nishat Prottoy. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
